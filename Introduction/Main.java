@@ -23,38 +23,53 @@
 //     }
 // }
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter: ");
-        int day = sc.nextInt();
-        switch (day) {
-            case 1:
-                System.out.println("Monday");
-                break;
-            case 2:
-                System.out.println("Tuesday");
-                break;
-            case 3:
-                System.out.println("Wednesday");
-                break;
-            case 4:
-                System.out.println("Thursday");
-                break;
-            case 5:
-                System.out.println("Friday");
-                break;
-            case 6:
-                System.out.println("Saturday");
-                break;
-            case 7:
-                System.out.println("Sunday");
-                break;
-            default:
-                System.out.println("Invalid day"); 
+// public class Main {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.print("Enter: ");
+//         int day = sc.nextInt();
+//         switch (day) {
+//             case 1:
+//                 System.out.println("Monday");
+//                 break;
+//             case 2:
+//                 System.out.println("Tuesday");
+//                 break;
+//             case 3:
+//                 System.out.println("Wednesday");
+//                 break;
+//             case 4:
+//                 System.out.println("Thursday");
+//                 break;
+//             case 5:
+//                 System.out.println("Friday");
+//                 break;
+//             case 6:
+//                 System.out.println("Saturday");
+//                 break;
+//             case 7:
+//                 System.out.println("Sunday");
+//                 break;
+//             default:
+//                 System.out.println("Invalid day"); 
+//         }
+//         sc.close();
+//     }
+// }
+
+
+
+class Main{
+    public static void main(String args[]){
+        int x=10;
+        long y=x;
+        float z=y;
+        System.out.println("Before conversion, int value "+x);
+        System.out.println("After conversion, long value "+y);
+        System.out.println("After conversion, float value "+z);
+
         }
-        sc.close();
-    }
 }
+
