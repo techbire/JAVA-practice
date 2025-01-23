@@ -4,6 +4,14 @@
 //     }
 // }
 
+
+
+
+
+
+
+
+
 // public class Main {
 //     public static void main(String[] args) {
 //     for(x=0;x<9;x++){
@@ -11,6 +19,14 @@
 //     }   
 //     }
 // }
+
+
+
+
+
+
+
+
 
 // public class Main {
 //     public static void main(String[] args) {
@@ -22,6 +38,13 @@
 //     if(y>x){System.out.println("y is bigger");}   
 //     }
 // }
+
+
+
+
+
+
+
 
 // import java.util.Scanner;
 
@@ -61,15 +84,45 @@
 
 
 
+
+
+
+
+
+
+// class Main{
+//     public static void main(String args[]){
+//         int x=10;
+//         long y=x;
+//         float z=y;
+//         System.out.println("Before conversion, int value "+x);
+//         System.out.println("After conversion, long value "+y);
+//         System.out.println("After conversion, float value "+z);
+
+//         }
+// }
+
+
+
+
+
+
+class Student{
+    int roll;
+    String name;
+    static String uni="LPU";
+    Student(int n,String s){
+        roll=n;
+        name=s;
+    }
+    void display(){
+        System.out.println(roll+" "+name+" "+uni);
+
+    }
+}
 class Main{
     public static void main(String args[]){
-        int x=10;
-        long y=x;
-        float z=y;
-        System.out.println("Before conversion, int value "+x);
-        System.out.println("After conversion, long value "+y);
-        System.out.println("After conversion, float value "+z);
-
-        }
+        Student S1=new Student(1,"Ansh");
+        S1.display();
+    }
 }
-
