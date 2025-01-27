@@ -107,22 +107,81 @@
 
 
 
-class Student{
-    int roll;
-    String name;
-    static String uni="LPU";
-    Student(int n,String s){
-        roll=n;
-        name=s;
-    }
-    void display(){
-        System.out.println(roll+" "+name+" "+uni);
+// class Student{
+//     int roll;
+//     String name;
+//     static String uni="LPU";
+//     Student(int n,String s){
+//         roll=n;
+//         name=s;
+//     }
+//     void display(){
+//         System.out.println(roll+" "+name+" "+uni);
 
-    }
-}
+//     }
+// }
+// class Main{
+//     public static void main(String args[]){
+//         Student S1=new Student(1,"Ansh");
+//         S1.display();
+//     }
+// }
+
+
+
+
+// class Main{
+//     public static void main(String args[]){
+//         int x=10;
+//         float y=10;
+//         System.out.println("value: "+(x+y));
+//         }
+// }
+
+
+
+
+// class Main{
+//     public static void main(String args[]){
+//         byte x=10;
+//         byte y=10;
+//         byte z=x+y;
+//         System.out.println("value: "+z);  //we cannot store value in byte due to lossy conversion
+//         }
+// }
+
+
+
+
+
+// class Main{
+//     public static void main(String args[]){
+//         int a=5;
+//         int b=10;
+//         int c=15;
+//         int d=(a>b)?((a>c)?a:c):((b<c)?b:c);
+//         System.out.println(d);
+//         }
+// }
+
+
+
+
+
+// class Main{
+//     public static void main(String args[]){
+//         int x=10;
+//         int y=12;
+//         System.out.println((x&y)>(x|y)?x:y);
+//         }
+// } 
+
+
 class Main{
     public static void main(String args[]){
-        Student S1=new Student(1,"Ansh");
-        S1.display();
-    }
-}
+        int x=10;
+        System.out.println(~x);
+        }
+} 
+
+
