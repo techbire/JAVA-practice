@@ -177,11 +177,184 @@
 // } 
 
 
+
+
+
+// Class Main{
+//     static void PrintArray(int arr[]){
+//         for(int i=0;i<arr.length;i++){
+//             System.out.print(arr[i]+" ");
+//         }
+//     }
+
+//     public static void main(String args[]){
+//         PrintArray(new int[]{1,2,3,4});
+//     }
+// }
+
+
+
+
+//method overloading
+// class Main{
+//     public double avg(int a,int b){
+//         return (double)(a/b)/2;
+//     }
+//     public double avg(int a,int b,int c){
+//         return (double)(a+b+c)/3;
+//     }
+//     public static void main(String args[]){
+//         Main obj=new Main();
+//         System.out.println(obj.avg(2,4));
+//         System.out.println(obj.avg(2,4,6));
+        
+//     }
+// }
+
+
+
+// class Main{
+//     public double avg(int...numbers){
+//         int sum=0;
+//         for(int i:numbers){
+//             sum+=i;
+//         }
+//         return numbers.length==0?0:(double)sum/numbers.length;
+//     }
+//     public static void main(String args[]){
+//         Main obj=new Main();
+//         System.out.println(obj.avg(2,3,4,5));
+//     }
+// }
+
+
+
+
+// import java.util.Scanner;
+// class Main{
+//     public static void main(String args[]){
+//   Scanner sc = new Scanner(System.in);
+
+//   System.out.println("enter rows arr1: ");
+//   int n = sc.nextInt();
+//   System.out.println("enter cols arr1: ");
+//    int m = sc.nextInt();
+//    System.out.println("enter cols arr 2:");
+//    int p=sc.nextInt();
+
+//    int [][]arr1=new int[n][m];
+//    int [][]arr1=new int[m][p];
+//    int [][]res=new int[n][p];
+
+
+
+// for(int i=0;i<n;i++){
+//     for(int j=0;j<n;j++){
+//         int arr[i][j]=sc.nextInt()
+//         int arr2[i][j]=arr1[i]*[j];
+//     }
+// }
+// for(int i=0;i<n;i++){
+//     for(int j=0;j<n;j++){
+//        System.out.println(arr[i][j]);
+
+//         }
+// } 
+//     }
+// }
+
+
+
+
+
+// import java.util.Scanner;
+
+// class Main {
+//     public static void main(String args[]) {
+//         Scanner sc = new Scanner(System.in);
+
+//         System.out.println("Enter number of rows for Matrix 1: ");
+//         int n = sc.nextInt();
+//         System.out.println("Enter number of columns for Matrix 1: ");
+//         int m = sc.nextInt();
+
+//         System.out.println("Enter number of columns for Matrix 2: ");
+//         int p = sc.nextInt();
+
+//         int[][] arr1 = new int[n][m];
+//         int[][] arr2 = new int[m][p];
+//         int[][] result = new int[n][p];
+
+//         System.out.println("Enter elements of Matrix 1:");
+//         for (int i = 0; i < n; i++) {
+//             for (int j = 0; j < m; j++) {
+//                 arr1[i][j] = sc.nextInt();
+//             }
+//         }
+
+//         System.out.println("Enter elements of Matrix 2:");
+//         for (int i = 0; i < m; i++) {
+//             for (int j = 0; j < p; j++) {
+//                 arr2[i][j] = sc.nextInt();
+//             }
+//         }
+
+//         for (int i = 0; i < n; i++) {
+//             for (int j = 0; j < p; j++) {
+//                 for (int k = 0; k < m; k++) {
+//                     result[i][j] += arr1[i][k] * arr2[k][j];
+//                 }
+//             }
+//         }
+
+//         System.out.println("Resultant Matrix:");
+//         for (int i = 0; i < n; i++) {
+//             for (int j = 0; j < p; j++) {
+//                 System.out.print(result[i][j] + " ");
+//             }
+//             System.out.println();
+//         }
+
+//         sc.close();
+//     }
+// }
+
+
+
+
+//enum
+// class Main{
+//     enum color{
+//         red,blue,green;
+//     }
+//     public static void main(String args[]){
+//         color c=color.red;
+//         System.out.println(c);
+//     }
+// }
+
+
+
 class Main{
+    enum crust{thin,regular,stuffed};
+    private crust crusttype;
+    public void setcrusttype(crust crusttype){
+        this.crusttype=crusttype;
+    }
+    public double getprices(){
+        if(crusttype==crust.thin)return 200;
+        if(crusttype==crust.regular)return 300;
+        if(crusttype==crust.stuffed)return 400;
+        return 0;
+    }
     public static void main(String args[]){
-        int x=10;
-        System.out.println(~x);
-        }
-} 
+        Main mypizza=new Main();
+            mypizza.setcrusttype(crust.thin);
+            System.out.println("thin crust price: "+mypizza.getprices());
+            mypizza.setcrusttype(crust.regular);
+            System.out.println("regular crust price: "+mypizza.getprices());
+            mypizza.setcrusttype(crust.stuffed);
+            System.out.println("stuffed crust price: "+mypizza.getprices());
 
-
+    }
+}
