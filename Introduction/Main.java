@@ -335,26 +335,55 @@
 
 
 
+//1.enum defination
+//2.setter method 
+//3.value assign
+//4.value retrieve means object k through method call hoga 
+
+// class Main{
+//     enum crust{thin,regular,stuffed};
+//     private crust crusttype;
+//     public void setcrusttype(crust crusttype){
+//         this.crusttype=crusttype;
+//     }
+//     public double getprices(){
+//         if(crusttype==crust.thin)return 200;
+//         if(crusttype==crust.regular)return 300;
+//         if(crusttype==crust.stuffed)return 400;
+//         return 0;
+//     }
+//     public static void main(String args[]){
+//         Main mypizza=new Main();
+//             mypizza.setcrusttype(crust.thin);
+//             System.out.println("thin crust price: "+mypizza.getprices());
+//             mypizza.setcrusttype(crust.regular);
+//             System.out.println("regular crust price: "+mypizza.getprices());
+//             mypizza.setcrusttype(crust.stuffed);
+//             System.out.println("stuffed crust price: "+mypizza.getprices());
+
+//     }
+// }
+
+
 class Main{
-    enum crust{thin,regular,stuffed};
-    private crust crusttype;
-    public void setcrusttype(crust crusttype){
-        this.crusttype=crusttype;
+    enum coffeetype{espresso,latte,cappuccino} //enum defination which is three types of coffee [ finite values ko group karne ke liye hota hai]
+    private coffeetype selected; //[selected ek private variable hai jo currently selected coffee type ko store karega. Iska type coffeetype enum hai.]
+
+    public void setcoffeetype(coffeetype selected){  //setter method which use to set the value of selected coffee type 
+        this.selected=selected;  //this.selected class ka variable hai, aur selected method ka argument hai.
     }
+
     public double getprices(){
-        if(crusttype==crust.thin)return 200;
-        if(crusttype==crust.regular)return 300;
-        if(crusttype==crust.stuffed)return 400;
+        if(selected==coffeetype.espresso)return 150;
+        if(selected==coffeetype.latte)return 200;
+        if(selected==coffeetype.cappuccino)return 250;
         return 0;
     }
-    public static void main(String args[]){
-        Main mypizza=new Main();
-            mypizza.setcrusttype(crust.thin);
-            System.out.println("thin crust price: "+mypizza.getprices());
-            mypizza.setcrusttype(crust.regular);
-            System.out.println("regular crust price: "+mypizza.getprices());
-            mypizza.setcrusttype(crust.stuffed);
-            System.out.println("stuffed crust price: "+mypizza.getprices());
+
+    public static void main(String args[]){ 
+        Main mycoffee=new Main();  //object created named mycoffee
+        mycoffee.setcoffeetype(coffeetype.espresso);
+        System.out.println("Espresso price: Rs." + mycoffee.getprices());
 
     }
 }
