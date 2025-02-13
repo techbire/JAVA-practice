@@ -520,27 +520,57 @@
 //--------------------------------------------------------------------------------------------------------------
 //program-for returing +1 day in string
 
+// import java.util.Scanner;
+// class Main{
+//     enum Day{
+//         MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY;}
+// public static void main(String args[]){
+//     Scanner sc=new Scanner(System.in);
+//     System.out.println("give me any name of day i give increase by 1: ");
+//     String input=sc.nextLine().trim().toUpperCase();
+//     try{
+//         Day currentDay=Day.valueOf(input);
+//         Day nextDay=Day.values()[(currentDay.ordinal()+1)%7];
+//         System.out.println(nextDay.name());    
+//         }
+//     catch(IllegalArgumentException e){
+//         System.out.println("Invalid Input");
+//     }
+// }
+
+//     }
+
+//--------------------------------------------------------------------------------------------------------------
+
+//program- SecondsToTime class with a constructor to convert a given duration in seconds into hh:mm:ss format, where input is an integer representing seconds, and output is the formatted time
+
 import java.util.Scanner;
-class Main{
-    enum Day{
-        MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY;}
-public static void main(String args[]){
-    Scanner sc=new Scanner(System.in);
-    System.out.println("give me any name of day i give increase by 1: ");
-    String input=sc.nextLine().trim().toUpperCase();
-    try{
-        Day currentDay=Day.valueOf(input);
-        Day nextDay=Day.values()[(currentDay.ordinal()+1)%7];
-        System.out.println(nextDay.name());    
+class SecondsToTime{
+    private int hr,min,sec;
+    public SecondsToTime(int totalseconds){
+        hr=totalseconds/3600;
+        min=(totalseconds%3600)/60;
+        sec=totalseconds%60;
+    }
+    public void displaytime(){
+        System.out.printf("%02d:%02d:%02d\n",hr,min,sec);
+    }
+    public class Main{
+        public static void main(String[] arg){
+            Scanner scanner=new Scanner(System.in);
+            int totalseconds=scanner.nextInt();
+            scanner.close();
+            SecondsToTime timeconverter=new SecondsToTime(totalseconds);
+            timeconverter.displaytime();
         }
-    catch(IllegalArgumentException e){
-        System.out.println("Invalid Input");
     }
 }
 
-    }
-
 //--------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 
