@@ -521,11 +521,12 @@
 //program-for returing +1 day in string
 
 import java.util.Scanner;
-class NextMetting{
+class Main{
     enum Day{
         MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY;}
 public static void main(String args[]){
     Scanner sc=new Scanner(System.in);
+    System.out.println("give me any name of day i give increase by 1: ");
     String input=sc.nextLine().trim().toUpperCase();
     try{
         Day currentDay=Day.valueOf(input);
