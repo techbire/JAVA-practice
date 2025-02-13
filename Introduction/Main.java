@@ -6,7 +6,7 @@
 
 
 
-
+//--------------------------------------------------------------------------------------------------------------
 
 
 
@@ -23,6 +23,7 @@
 
 
 
+//--------------------------------------------------------------------------------------------------------------
 
 
 
@@ -41,6 +42,7 @@
 
 
 
+//--------------------------------------------------------------------------------------------------------------
 
 
 
@@ -84,6 +86,7 @@
 
 
 
+//--------------------------------------------------------------------------------------------------------------
 
 
 
@@ -103,6 +106,9 @@
 // }
 
 
+
+
+//--------------------------------------------------------------------------------------------------------------
 
 
 
@@ -130,6 +136,12 @@
 
 
 
+//--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 // class Main{
 //     public static void main(String args[]){
 //         int x=10;
@@ -137,6 +149,13 @@
 //         System.out.println("value: "+(x+y));
 //         }
 // }
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -149,6 +168,11 @@
 //         System.out.println("value: "+z);  //we cannot store value in byte due to lossy conversion
 //         }
 // }
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
 
 
 
@@ -168,6 +192,11 @@
 
 
 
+//--------------------------------------------------------------------------------------------------------------
+
+
+
+
 // class Main{
 //     public static void main(String args[]){
 //         int x=10;
@@ -175,6 +204,12 @@
 //         System.out.println((x&y)>(x|y)?x:y);
 //         }
 // } 
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
 
 
 
@@ -191,6 +226,11 @@
 //         PrintArray(new int[]{1,2,3,4});
 //     }
 // }
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
 
 
 
@@ -213,6 +253,11 @@
 
 
 
+//--------------------------------------------------------------------------------------------------------------
+
+
+
+
 // class Main{
 //     public double avg(int...numbers){
 //         int sum=0;
@@ -226,6 +271,11 @@
 //         System.out.println(obj.avg(2,3,4,5));
 //     }
 // }
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
 
 
 
@@ -262,6 +312,14 @@
 // } 
 //     }
 // }
+
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -322,6 +380,169 @@
 
 
 
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+
+
+//method
+
+// class Main{
+//     public static void main(String[] args){      //static idhar h toh niche method me bhi static mention hoga!
+//     greet();
+//     greet();
+//     greet();
+ 
+//     }
+//     static void greet(){                //void means no return type 
+//         System.out.println("hello ji");
+//     }
+// }
+
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+
+//method with parameter
+
+
+// class Main {
+//     public static void main(String[] args) {
+//         average(4, 6);
+//     }
+//     public static void average(int a, int b) {
+//         System.out.println("The avg is: " + (a + b) / 2);
+//     }
+// }
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+//basic of class and object
+
+// class Car { 
+//     String brand = "Toyota"; // Data members
+//     void showBrand() { // Method
+//         System.out.println("Brand: " + brand);
+//     }
+// }
+// public class Main {
+//     public static void main(String[] args) {
+//         Car c = new Car(); // Object creation
+//         c.showBrand();
+//     }
+// }
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+//constructor and method 
+
+// class Student {
+//     String name;
+//     Student() { // Constructor=special method called when an object is created and it is inside a class
+//         name = "Default";
+//     }
+//     void display() { // Method
+//         System.out.println("Name: " + name);
+//     }
+// }
+// public class Main {
+//     public static void main(String[] args) {
+//         Student s = new Student();
+//         s.display();
+//     }
+// }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+//Method overloading --same name , different parameters
+
+// class Calc {
+//     int add(int a, int b) { return a + b; } // Method Overloading
+//     int add(int a, int b, int c) { return a + b + c; }
+// }
+// public class Main {
+//     public static void main(String[] args) {
+//         Calc obj = new Calc();
+//         System.out.println(obj.add(5, 10)); // Calls first method
+//         System.out.println(obj.add(5, 10, 15)); // Calls second method
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+
+//this keyword = refers to the current object's instance
+
+// class Person {
+//     String name;
+//     Person(String name) { this.name = name; } // Resolves variable conflict
+//     void show() { System.out.println("Name: " + this.name); }
+// }
+// public class Main {
+//     public static void main(String[] args) {
+//         Person p = new Person("Ansh");
+//         p.show();
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+
+//initializer blocks= run before constr. when object is created
+
+// class Demo {
+//     { System.out.println("Initializer Block Executed!"); } // Runs before constructor
+//     Demo() { System.out.println("Constructor Called!"); }
+// }
+// public class Main {
+//     public static void main(String[] args) {
+//         new Demo(); // Output: Initializer Block -> Constructor
+//     }
+// }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+//program-for returing +1 day in string
+
+import java.util.Scanner;
+class NextMetting{
+    enum Day{
+        MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY;}
+public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    String input=sc.nextLine().trim().toUpperCase();
+    try{
+        Day currentDay=Day.valueOf(input);
+        Day nextDay=Day.values()[(currentDay.ordinal()+1)%7];
+        System.out.println(nextDay.name());    
+        }
+    catch(IllegalArgumentException e){
+        System.out.println("Invalid Input");
+    }
+}
+
+    }
+
+//--------------------------------------------------------------------------------------------------------------
+
+
+
 //enum
 // class Main{
 //     enum color{
@@ -365,25 +586,25 @@
 // }
 
 
-class Main{
-    enum coffeetype{espresso,latte,cappuccino} //enum defination which is three types of coffee [ finite values ko group karne ke liye hota hai]
-    private coffeetype selected; //[selected ek private variable hai jo currently selected coffee type ko store karega. Iska type coffeetype enum hai.]
+// class Main{
+//     enum coffeetype{espresso,latte,cappuccino} //enum defination which is three types of coffee [ finite values ko group karne ke liye hota hai]
+//     private coffeetype selected; //[selected ek private variable hai jo currently selected coffee type ko store karega. Iska type coffeetype enum hai.]
 
-    public void setcoffeetype(coffeetype selected){  //setter method which use to set the value of selected coffee type 
-        this.selected=selected;  //this.selected class ka variable hai, aur selected method ka argument hai.
-    }
+//     public void setcoffeetype(coffeetype selected){  //setter method which use to set the value of selected coffee type 
+//         this.selected=selected;  //this.selected class ka variable hai, aur selected method ka argument hai.
+//     }
 
-    public double getprices(){
-        if(selected==coffeetype.espresso)return 150;
-        if(selected==coffeetype.latte)return 200;
-        if(selected==coffeetype.cappuccino)return 250;
-        return 0;
-    }
+//     public double getprices(){
+//         if(selected==coffeetype.espresso)return 150;
+//         if(selected==coffeetype.latte)return 200;
+//         if(selected==coffeetype.cappuccino)return 250;
+//         return 0;
+//     }
 
-    public static void main(String args[]){ 
-        Main mycoffee=new Main();  //object created named mycoffee
-        mycoffee.setcoffeetype(coffeetype.espresso);
-        System.out.println("Espresso price: Rs." + mycoffee.getprices());
+//     public static void main(String args[]){ 
+//         Main mycoffee=new Main();  //object created named mycoffee
+//         mycoffee.setcoffeetype(coffeetype.espresso);
+//         System.out.println("Espresso price: Rs." + mycoffee.getprices());
 
-    }
-}
+//     }
+// }
