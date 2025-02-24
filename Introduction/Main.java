@@ -544,27 +544,27 @@
 
 //program- SecondsToTime class with a constructor to convert a given duration in seconds into hh:mm:ss format, where input is an integer representing seconds, and output is the formatted time
 
-import java.util.Scanner;
-class SecondsToTime{
-    private int hr,min,sec;
-    public SecondsToTime(int totalseconds){
-        hr=totalseconds/3600;
-        min=(totalseconds%3600)/60;
-        sec=totalseconds%60;
-    }
-    public void displaytime(){
-        System.out.printf("%02d:%02d:%02d\n",hr,min,sec);
-    }
-    public class Main{
-        public static void main(String[] arg){
-            Scanner scanner=new Scanner(System.in);
-            int totalseconds=scanner.nextInt();
-            scanner.close();
-            SecondsToTime timeconverter=new SecondsToTime(totalseconds);
-            timeconverter.displaytime();
-        }
-    }
-}
+// import java.util.Scanner;
+// class SecondsToTime{
+//     private int hr,min,sec;
+//     public SecondsToTime(int totalseconds){
+//         hr=totalseconds/3600;
+//         min=(totalseconds%3600)/60;
+//         sec=totalseconds%60;
+//     }
+//     public void displaytime(){
+//         System.out.printf("%02d:%02d:%02d\n",hr,min,sec);
+//     }}
+//     public class Main{
+//         public static void main(String[] arg){
+//             Scanner scanner=new Scanner(System.in);
+//             System.out.print("tell me seconds which you want to display in hr/m/sec: ");
+//             int totalseconds=scanner.nextInt();
+//             scanner.close();
+//             SecondsToTime timeconverter=new SecondsToTime(totalseconds);
+//             timeconverter.displaytime();
+//         }
+// }
 
 //--------------------------------------------------------------------------------------------------------------
 
@@ -639,3 +639,89 @@ class SecondsToTime{
 
 //     }
 // }
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+// class Main{
+//     public static void main(String args[]){
+//         String str=new String("ansh");
+//         String str1=new String(str);
+//         System.out.print(str);
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+// class Main{
+//     public static void main(String args[]){
+//         String str=new String(" katil Aashik");
+//         String str1=new String(str); 
+//         System.out.println(str1);
+
+
+
+
+//         int intArray[]={72,101,108,108,111};
+//         String str=new String(intArray,1,3);
+//         System.out.println(str);
+
+
+
+
+//     char charArray[]={'A','a','s','h','i','k'};
+//     String str3=new String(charArray);
+//     System.out.println(str3);
+
+
+
+
+//     byte byteArray[]={72,101,108,108,111};
+//     String str4=new String(byteArray);
+//     System.out.println(str4);
+//     }
+
+// }
+
+//--------------------------------------------------------------------------------------------------------------
+
+
+// class Main{
+//     public static void main(String args[]){
+//         String s1=new String("ansh");
+//         s1.concat("gupta");
+//         System.out.print(s1);
+
+//         StringBuffer s2=new StringBuffer("rock");
+//         s2.append("bhai");
+//         System.out.print(s2);
+
+//     }
+// }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+//heritance
+class NormalDoor{
+    void open(){System.out.print("door is opened");}
+    void close(){System.out.print("door is closed");}
+}
+class Main extends NormalDoor{
+    private int pin=1234;
+    void smartunlock(int enteredpin){
+        if(enteredpin==pin){System.out.print("opened");open();}
+        else{System.out.print("wrong pin");}
+    }
+
+public static void main(String args[]){
+    Main mydoor=new Main();
+    mydoor.smartunlock(1234);
+    mydoor.close();
+}
+}
