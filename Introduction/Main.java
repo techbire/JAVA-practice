@@ -708,20 +708,48 @@
 //--------------------------------------------------------------------------------------------------------------
 
 //heritance
-class NormalDoor{
-    void open(){System.out.print("door is opened");}
-    void close(){System.out.print("door is closed");}
+// class NormalDoor{
+//     void open(){System.out.print("door is opened");}
+//     void close(){System.out.print("door is closed");}
+// }
+// class Main extends NormalDoor{
+//     private int pin=1234;
+//     void smartunlock(int enteredpin){
+//         if(enteredpin==pin){System.out.print("opened");open();}
+//         else{System.out.print("wrong pin");}
+//     }
+
+// public static void main(String args[]){
+//     Main mydoor=new Main();
+//     mydoor.smartunlock(1234);
+//     mydoor.close();
+// }
+// }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+//heritance
+class car{  //car-->automatic car(main)-->electric
+
+    void start(){System.out.print("car has started");}
 }
-class Main extends NormalDoor{
-    private int pin=1234;
-    void smartunlock(int enteredpin){
-        if(enteredpin==pin){System.out.print("opened");open();}
-        else{System.out.print("wrong pin");}
+class electric extends car{   //main=automatic car
+    void charge(){
+        System.out.print("charing......");
+    }
+}
+
+class Main extends electric{   //main=automatic car
+    void drive(){
+        System.out.print("driving......");
     }
 
 public static void main(String args[]){
-    Main mydoor=new Main();
-    mydoor.smartunlock(1234);
-    mydoor.close();
+    Main mytesla=new Main();
+    mytesla.start();
+    mytesla.charge();
+    mytesla.drive();
 }
 }
