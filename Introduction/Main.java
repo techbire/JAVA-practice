@@ -836,3 +836,81 @@
 //     }
 // }
 
+
+
+//--------------------------------------------------------------------------------------------------------------
+//multiple class heritance
+
+// interface A{
+//     void show();
+// }
+// interface B extends A{
+//     default void show(){
+//         System.out.print("hello from b");
+//     }
+// }
+
+// interface C extends A{
+//     default void show(){
+//         System.out.print("hello from c");
+//     }
+// }
+
+// class D implements B,C{
+//     public void show(){
+//         C.super.show();
+//     }
+// }
+
+// class Main{
+//     public static void main(String args[]){
+//         D obj=new D();
+//         obj.show();
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+//super class
+
+// class parent{
+//     String name="parent class";
+// }
+// class child extends parent{
+//     String name="child class";
+//     void display(){
+//         System.out.print(name);
+//         System.out.print(super.name);
+//     }
+// }
+
+// class supervariabledemo{
+//     public static void main(String[] args){
+//         child obj=new child();
+//         obj.display();
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+//super class
+
+class parent{
+    void show(){
+        System.out.print("parent method");
+    }
+}
+class child extends parent{
+    void show(){
+        super.show();
+        System.out.print("child method");
+    }
+    }
+
+
+class supervariabledemo{
+    public static void main(String[] args){
+        child obj=new child();
+        obj.show();
+    }
+}
