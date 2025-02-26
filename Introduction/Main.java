@@ -484,6 +484,58 @@
 
 //--------------------------------------------------------------------------------------------------------------
 
+//method overloading other example 
+
+// public class Main{
+//     public static void main(String[] args){
+//         Greet obj=new Greet();
+//         obj.greetings();
+//         obj.greetings("ansh");
+
+//     }
+// }
+
+
+// class Greet{
+//     void greetings(){
+//         System.out.println("hello, good morning");
+//     }
+
+
+//     void greetings(String name){
+//         System.out.println("hello, "+name+ "good morning");
+//     }
+
+
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+//constructor  [cons. invoke karata h mtlb set karta h]
+
+// public class Main {
+//     public static void main(String[] args) {
+//         Complex num1 = new Complex();
+//         Complex num2 = new Complex();
+//         num1.print();
+//     }
+// }
+
+// class Complex {
+//     int a, b;
+
+//     public Complex() {
+//         a = 5;
+//         b = 0;
+//         System.out.println("creating new object"); }
+
+//     void print() {
+//    System.out.println(a);
+//     System.out.println(b);
+// }
+// }
+//--------------------------------------------------------------------------------------------------------------
 
 //this keyword = refers to the current object's instance
 
@@ -731,25 +783,56 @@
 //--------------------------------------------------------------------------------------------------------------
 
 //heritance
-class car{  //car-->automatic car(main)-->electric
+// class car{  //car-->automatic car(main)-->electric
 
-    void start(){System.out.print("car has started");}
-}
-class electric extends car{   //main=automatic car
-    void charge(){
-        System.out.print("charing......");
-    }
-}
+//     void start(){System.out.print("car has started");}
+// }
+// class electric extends car{   //main=automatic car
+//     void charge(){
+//         System.out.print("charing......");
+//     }
+// }
 
-class Main extends electric{   //main=automatic car
-    void drive(){
-        System.out.print("driving......");
-    }
+// class Main extends electric{   //main=automatic car
+//     void drive(){
+//         System.out.print("driving......");
+//     }
 
-public static void main(String args[]){
-    Main mytesla=new Main();
-    mytesla.start();
-    mytesla.charge();
-    mytesla.drive();
-}
-}
+// public static void main(String args[]){
+//     Main mytesla=new Main();
+//     mytesla.start();
+//     mytesla.charge();
+//     mytesla.drive();
+// }
+// }
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+//run time polymorphism -overriding
+
+// class bank{
+//     double getinterestrate(){return 5.0;}  //default value ye return karega
+// }
+
+// class sbi extends bank{
+//     @Override
+//     double getinterestrate(){return 6.5;}  // @override is help to tell us where is typo error and if it is not present then it return default value as 5.0;
+// }
+
+// class hdfc extends bank{
+//     @Override
+//     double getinterestrate(){return 7.5;}  
+// }
+
+// class Main{
+//     public static void main(String args[]){
+//         bank account;
+//         account=new sbi();
+//         System.out.println("rate is: "+account.getinterestrate());
+//          account=new hdfc();
+//         System.out.println("rate is: "+account.getinterestrate());
+//     }
+// }
+
