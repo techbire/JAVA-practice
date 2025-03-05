@@ -895,22 +895,154 @@
 //--------------------------------------------------------------------------------------------------------------
 //super class
 
-class parent{
-    void show(){
-        System.out.print("parent method");
-    }
-}
-class child extends parent{
-    void show(){
-        super.show();
-        System.out.print("child method");
-    }
-    }
+// class parent{
+//     void show(){
+//         System.out.print("parent method");
+//     }
+// }
+// class child extends parent{
+//     void show(){
+//         super.show();
+//         System.out.print("child method");
+//     }
+//     }
 
 
-class supervariabledemo{
-    public static void main(String[] args){
-        child obj=new child();
-        obj.show();
-    }
-}
+// class supervariabledemo{
+//     public static void main(String[] args){
+//         child obj=new child();
+//         obj.show();
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+// class Main{
+//     final void show(){
+//         System.out.println("hello");
+//     }
+
+// class ansh extends Main{
+//     void show(){
+//         System.out.println("heyy");
+//     }
+//     public static void main(String args[]){
+//         ansh obj=new ansh();
+//         obj.show();
+//     }
+// }}
+
+
+//--------------------------------------------------------------------------------------------------------------
+// another example of final keyword
+
+// class Parent {
+//     final void show() {
+//         System.out.println("Final method in Parent class");
+//     }
+// }
+
+// class Child extends Parent {
+//     // void show() { } // ERROR: Cannot override final method
+// }
+
+// class Test {
+//     public static void main(String[] args) {
+//         Child obj = new Child();
+//         obj.show();
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+// class ansh{
+//     int number;
+//     ansh(int number){
+//         this.number=number;
+//     }
+//     @Override
+//     public String toString(){
+//         return Integer.toString(number);
+//     }
+// }
+
+// class Main{
+//     public static void main(String args[]){
+//         ansh obj=new ansh(2134);
+//         ansh obj1=new ansh(2134);
+//         System.out.println(obj);
+//         System.out.println(obj.toString());
+//         System.out.println(obj.equals(obj1));
+//     }
+// }
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+// class IndianCitizen{}
+// class PunjabCitizen extends IndianCitizen{}
+
+// class Main{
+//     public static void main(String args[]){
+//         PunjabCitizen person1=null;
+//         System.out.println(person1 instanceof IndianCitizen);
+//         System.out.println(person1 instanceof PunjabCitizen);
+
+//     }
+// } 
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+// abstract class aadhaarform{
+//     String name;
+//     int age;
+
+
+// aadhaarform(String name,int age){
+//     this.name=name;
+//     this.age=age;
+// }
+// void printdetails(){
+//     System.out.println("Name: "+name+",Age: "+age);
+// }
+
+// abstract void stateverification();
+// }
+
+// class delhiaadhaar extends aadhaarform{
+//     delhiaadhaar(String name,int age){
+//         super(name,age);
+//     }
+//     @Override
+//     void stateverification(){
+//         System.out.println("delhi verification: electricity bill required.");
+//     }
+// }
+
+// class maharastraaadhaar extends aadhaarform{
+//     maharastraaadhaar(String name,int age){
+//         super(name,age);
+//     }
+
+//     @Override
+//     void stateverification(){
+//         System.out.println("maharastra verification: ration card required.");
+//     }
+// }
+
+// public class Main{
+//     public static void main(String args[]){
+//         aadhaarform person1=new delhiaadhaar("ansh",3);
+//         person1.printdetails();
+//         person1.stateverification();
+
+//         aadhaarform person2=new maharastraaadhaar("ansh",3);
+//         person1.printdetails();
+//         person1.stateverification();
+        
+
+//     }
+// }
+//--------------------------------------------------------------------------------------------------------------
