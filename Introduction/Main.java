@@ -1046,3 +1046,46 @@
 //     }
 // }
 //--------------------------------------------------------------------------------------------------------------
+
+
+class nani {
+    void aloopartha() {
+        System.out.println("The secret recipe is followed...");
+    }
+}
+
+interface maa {
+    void addspices();
+}
+
+interface maasi {
+    void addpaneer();
+}
+
+class myrecipe extends nani implements maa, maasi {
+    @Override
+    public void addspices() { 
+        System.out.println("Add fennel seeds");
+    }
+
+    @Override
+    public void addpaneer() { 
+        System.out.println("Add grated paneer");
+    }
+
+    @Override
+    public void aloopartha() {
+        System.out.println("Start from nani's recipe");
+        super.aloopartha();  
+        addspices();
+        addpaneer();
+        System.out.println("Add dried fenugreek leaves");
+    }
+}
+
+class Main {
+    public static void main(String args[]) {
+        myrecipe paratha = new myrecipe();
+        paratha.aloopartha();
+    }
+}
