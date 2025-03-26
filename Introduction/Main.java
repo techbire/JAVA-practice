@@ -1048,44 +1048,215 @@
 //--------------------------------------------------------------------------------------------------------------
 
 
-class nani {
-    void aloopartha() {
-        System.out.println("The secret recipe is followed...");
-    }
-}
+// class nani {
+//     void aloopartha() {
+//         System.out.println("The secret recipe is followed...");
+//     }
+// }
 
-interface maa {
-    void addspices();
-}
+// interface maa {
+//     void addspices();
+// }
 
-interface maasi {
-    void addpaneer();
-}
+// interface maasi {
+//     void addpaneer();
+// }
 
-class myrecipe extends nani implements maa, maasi {
-    @Override
-    public void addspices() { 
-        System.out.println("Add fennel seeds");
-    }
+// class myrecipe extends nani implements maa, maasi {
+//     @Override
+//     public void addspices() { 
+//         System.out.println("Add fennel seeds");
+//     }
 
-    @Override
-    public void addpaneer() { 
-        System.out.println("Add grated paneer");
-    }
+//     @Override
+//     public void addpaneer() { 
+//         System.out.println("Add grated paneer");
+//     }
 
-    @Override
-    public void aloopartha() {
-        System.out.println("Start from nani's recipe");
-        super.aloopartha();  
-        addspices();
-        addpaneer();
-        System.out.println("Add dried fenugreek leaves");
-    }
-}
+//     @Override
+//     public void aloopartha() {
+//         System.out.println("Start from nani's recipe");
+//         super.aloopartha();  
+//         addspices();
+//         addpaneer();
+//         System.out.println("Add dried fenugreek leaves");
+//     }
+// }
+
+// class Main {
+//     public static void main(String args[]) {
+//         myrecipe paratha = new myrecipe();
+//         paratha.aloopartha();
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+
+//functional interface
+
+
+// interface consumer{
+//     void upgrade(String str);
+// }
+
+// class Main
+// {
+//     public static void main(String[] args){
+//         consumer example=(str)->System.out.print(str.toUpperCase());
+//         example.upgrade("hello");
+//     }
+// }
+
+
+
+//another method
+
+// import java.util.function.Consumer;
+
+// class Main {
+//     public static void main(String args[]) {
+//         Consumer<String> example = (str) -> System.out.println(str.toUpperCase());
+//         example.accept("helllo");
+//     }
+// }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+//supplier
+
+// interface supplier{
+//     double getnumber();
+// }
+
+// class Main{
+//     public static void main(String[] args){
+//         supplier s=()->Math.random();
+//         System.out.print(s.getnumber());
+//     }
+// }
+
+
+
+
+
+//or
+
+// import java.util.function.Supplier;
+// class Main{
+//     public static void main(String args[]){
+//         Supplier<Double> s=()->Math.random();
+//         System.out.print(s.get());
+//     }
+// }
+
+
+//or
+
+// import java.util.function.Function;
+// class Main{
+//     public static void main(String[] args){
+//         Function<Integer,Integer> f=(num)->num*num;
+//         System.out.print(f.apply(5));
+//     }
+// }
+
+//or
+
+// interface Function{
+//     int square(int num);
+// }
+
+// class Main{
+//     public static void main(String[] args){
+//         Function f=(int num)->num*num;
+//         System.out.print(f.square(5));
+//     }
+// }
+
+
+
+
+
+
+
+// interface predicateex{
+//     boolean check(int num);
+// }
+
+// class Main{
+//     public static void main(String[] args){
+//         predicateex p=num->num%2==0;
+//         System.out.println(p.check(10));
+//         System.out.println(p.check(15));
+//     }
+// }
+
+
+
+//or
+
+// import java.util.function.Predicate;
+// class Main{
+//     public static void main(String args[]){
+//         Predicate<Integer> p=num->num%2==0;
+//         System.out.println(p.test(10));
+//         System.out.println(p.test(15));
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+import java.util.function.*;
 
 class Main {
-    public static void main(String args[]) {
-        myrecipe paratha = new myrecipe();
-        paratha.aloopartha();
+    public static void main(String[] args) {
+        // Supplier: Returns a value without input
+        Supplier<Double> supplier = () -> Math.random();
+        System.out.println("Supplier: " + supplier.get());
+
+        // Consumer: Takes input but returns nothing
+        Consumer<String> consumer = str -> System.out.println("Consumer: " + str.toUpperCase());
+        consumer.accept("hello");
+
+        // Function: Takes one input and returns one output
+        Function<Integer, Integer> function = num -> num * num;
+        System.out.println("Function: " + function.apply(5));
+
+        // Predicate: Takes input and returns boolean
+        Predicate<Integer> predicate = num -> num % 2 == 0;
+        System.out.println("Predicate (isEven 10): " + predicate.test(10));
+        System.out.println("Predicate (isEven 15): " + predicate.test(15));
+
+        // Runnable: No input, no output (used for running tasks)
+        Runnable runnable = () -> System.out.println("Runnable: Task executed!");
+        runnable.run();
+    }
+}
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+
+//utility
+
+import java.util.Calendar;
+
+class Main {
+    public static void main(String[] args) {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH) + 1; // Months are 0-based
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        
+        System.out.println("Current date: " + day + "/" + month + "/" + year);
+
+        // Add 5 days
+        calendar.add(Calendar.DAY_OF_MONTH, 5);
+        System.out.println("Date after 5 days: " + calendar.getTime());
     }
 }
