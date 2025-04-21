@@ -1211,32 +1211,32 @@
 
 //--------------------------------------------------------------------------------------------------------------
 
-import java.util.function.*;
+// import java.util.function.*;
 
-class Main {
-    public static void main(String[] args) {
-        // Supplier: Returns a value without input
-        Supplier<Double> supplier = () -> Math.random();
-        System.out.println("Supplier: " + supplier.get());
+// class Main {
+//     public static void main(String[] args) {
+//         // Supplier: Returns a value without input
+//         Supplier<Double> supplier = () -> Math.random();
+//         System.out.println("Supplier: " + supplier.get());
 
-        // Consumer: Takes input but returns nothing
-        Consumer<String> consumer = str -> System.out.println("Consumer: " + str.toUpperCase());
-        consumer.accept("hello");
+//         // Consumer: Takes input but returns nothing
+//         Consumer<String> consumer = str -> System.out.println("Consumer: " + str.toUpperCase());
+//         consumer.accept("hello");
 
-        // Function: Takes one input and returns one output
-        Function<Integer, Integer> function = num -> num * num;
-        System.out.println("Function: " + function.apply(5));
+//         // Function: Takes one input and returns one output
+//         Function<Integer, Integer> function = num -> num * num;
+//         System.out.println("Function: " + function.apply(5));
 
-        // Predicate: Takes input and returns boolean
-        Predicate<Integer> predicate = num -> num % 2 == 0;
-        System.out.println("Predicate (isEven 10): " + predicate.test(10));
-        System.out.println("Predicate (isEven 15): " + predicate.test(15));
+//         // Predicate: Takes input and returns boolean
+//         Predicate<Integer> predicate = num -> num % 2 == 0;
+//         System.out.println("Predicate (isEven 10): " + predicate.test(10));
+//         System.out.println("Predicate (isEven 15): " + predicate.test(15));
 
-        // Runnable: No input, no output (used for running tasks)
-        Runnable runnable = () -> System.out.println("Runnable: Task executed!");
-        runnable.run();
-    }
-}
+//         // Runnable: No input, no output (used for running tasks)
+//         Runnable runnable = () -> System.out.println("Runnable: Task executed!");
+//         runnable.run();
+//     }
+// }
 
 
 //--------------------------------------------------------------------------------------------------------------
@@ -1244,19 +1244,275 @@ class Main {
 
 //utility
 
-import java.util.Calendar;
+// import java.util.Calendar;
 
-class Main {
-    public static void main(String[] args) {
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH) + 1; // Months are 0-based
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
+// class Main {
+//     public static void main(String[] args) {
+//         Calendar calendar = Calendar.getInstance();
+//         int year = calendar.get(Calendar.YEAR);
+//         int month = calendar.get(Calendar.MONTH) + 1; // Months are 0-based
+//         int day = calendar.get(Calendar.DAY_OF_MONTH);
         
-        System.out.println("Current date: " + day + "/" + month + "/" + year);
+//         System.out.println("Current date: " + day + "/" + month + "/" + year);
 
-        // Add 5 days
-        calendar.add(Calendar.DAY_OF_MONTH, 5);
-        System.out.println("Date after 5 days: " + calendar.getTime());
+//         // Add 5 days
+//         calendar.add(Calendar.DAY_OF_MONTH, 5);
+//         System.out.println("Date after 5 days: " + calendar.getTime());
+//     }
+// }
+
+//--------------------------------------------------------------------------------------------------------------
+
+// import java.time.*;
+// import java.time.ZonedDateTime;
+// import java.time.ZoneId;
+// import java.util.Calendar;
+
+// class Main {
+//     public static void main(String args[]) {
+//         // LocalDate and LocalTime examples
+//         LocalDate today = LocalDate.now();
+//         LocalTime now = LocalTime.now();
+//         System.out.println("Today date is: " + today);
+//         System.out.println("Current time is: " + now);
+
+//         LocalDate specificDate = LocalDate.of(2025, 3, 31);
+//         LocalTime specificTime = LocalTime.of(20, 20);
+//         System.out.println("Specific date is: " + specificDate);
+//         System.out.println("Specific time is: " + specificTime);
+        
+//         LocalDate nextWeek = today.plusWeeks(1);
+//         System.out.println("Next week's date is: " + nextWeek);
+
+//         // ZonedDateTime example
+//         ZonedDateTime currentZone = ZonedDateTime.now();
+//         System.out.println("Current zone date & time: " + currentZone);
+//         ZonedDateTime indiaTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata"));
+//         System.out.println("India time is: " + indiaTime);
+
+//         // LocalDateTime example
+//         LocalDateTime localDateTimeNow = LocalDateTime.now();
+//         System.out.println("Current LocalDateTime is: " + localDateTimeNow);
+//         LocalDateTime futureDateTime = localDateTimeNow.plusDays(10).plusHours(2);
+//         System.out.println("Future LocalDateTime is: " + futureDateTime);
+
+//         // Calendar example
+//         Calendar calendar = Calendar.getInstance();
+//         int year = calendar.get(Calendar.YEAR);
+//         int month = calendar.get(Calendar.MONTH) + 1;
+//         int day = calendar.get(Calendar.DAY_OF_MONTH);
+//         System.out.println("Current date is: " + day + "/" + month + "/" + year + " " + calendar.getTime());
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+// class Main{
+//     public static void main(String args[]){
+//         try{
+//             int a=10,b=0,c;
+//             c=a/b;
+//             System.out.println(c);
+//         }
+//         catch(Exception e){
+//             System.out.println("this is exception");
+
+//         }
+//         finally{
+//             System.out.println("finally");
+//         }
+
+//         try{
+//             int a[]=new int[6];
+//             a[6]=30;
+//         }
+//         catch(ArrayIndexOutOfBoundsException e){
+//             System.out.println(e);
+//         }
+
+//         System.out.println("hello");
+//     }
+// }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+// class Main{
+//     public static void main(String args[]){
+//         try{
+//             int a=10,b=0;
+//             int result=a/b;
+//             System.out.println(result);
+//             int a[]=new int[5];
+//             a[6]=30;
+//         }
+//         catch(ArithmeticException|ArrayIndexOutOfBoundsException e){
+//             System.out.println(e);
+//         }
+//     }
+// }
+
+// //--------------------------------------------------------------------------------------------------------------
+// class Main{
+//     public static void main(String args[]){
+//         try{v
+//             int a=10,b=0;
+//             int result=a/b;
+//             System.out.println(result);
+            
+//             a[6]=30;
+//         }
+//         catch(ArithmeticException|ArrayIndexOutOfBoundsException e){
+//             System.out.println(e);
+//         }
+//     }
+// }
+
+// //--------------------------------------------------------------------------------------------------------------
+// class Main{
+//     static void checkpass(int marks){
+//         if(marks<40){
+//             throw new ArithmeticException("failing student but still java execution doesnt stop");
+//         }
+//     }
+//         public static void main(String args[]){
+//             checkpass(25);
+//             System.out.println("exam result is out!");
+//         }
+//     }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+//oject stream demo
+
+// import java.io.*;
+
+// //class and implement serializable
+// class Student implements Serializable{
+//     int roll;
+//     String name;
+//     double marks;
+
+// public Student(int roll,String name,double marks){
+//     this.roll=roll;
+//     this.name=name;
+//     this.marks=marks;
+
+// }
+// void display(){
+//     System.out.println("roll: "+roll);
+//     System.out.println("name: "+name);
+//     System.out.println("marks: "+marks);
+// }
+// }
+
+// public class Main{
+//     public static void main(String args[])throws IOException,ClassNotFoundException{
+//         Student s1=new Student(1,"ansh",99.9);
+//         //step-3 write object to file
+
+//         ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("object.txt"));
+//         oos.writeObject(s1);
+//         oos.close();
+//         System.out.println("student object saved!");
+
+//         //step-4 read object from file
+//         ObjectInputStream ois=new ObjectInputStream(new FileInputStream("object.txt"));
+//         Student s2=(Student)ois.readObject();
+        
+//         s2.display();
+//         ois.close();
+//     }
+// }
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+//import java.io.*;
+// class Main{
+//     public static void main(String args[]) throws IOException{
+//         String data="SkipReset";
+//         BufferedReader br=new BufferedReader(new StringReader(data));
+//         br.mark(5);
+//         System.out.print((char)br.read());
+//         br.reset();
+//         System.out.println(br.readLine());
+//         br.close();
+//     }
+// }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+// import java.io.*;
+// class Main{
+//     public static void main(String args[]) throws IOException{
+//         String data="SkipReset";
+//         BufferedReader br=new BufferedReader(new StringReader(data));
+//         br.skip(4);
+//         System.out.println(br.readLine()); //complete all line read karega -
+//         br.close();
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+import java.io.*;
+class Container<T>
+{
+    private T item;
+    public Container(T item) {
+        this.item = item;
+    }
+    void display(){
+        System.out.println("Item: " + item);
+    }
+
+}
+
+class Main
+{
+    public static void main(String args[])
+    {
+        Container<String> stringContainer = new Container<>("Hello, Generics!");
+        stringContainer.display();
+
+        Container<Integer> intContainer = new Container<>(123);
+        intContainer.display();
+    }
+}
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+import java.io.*;
+
+class Container<T, Y, Z> {
+    private T first;
+    private Y second;
+    private Z third;
+
+    public Container(T first, Y second, Z third) {
+        this.first = first;
+        this.second = second;
+        this.third = third;
+    }
+
+    void display() {
+        System.out.println("First: " + first);
+        System.out.println("Second: " + second);
+        System.out.println("Third: " + third);
+    }
+}
+
+public class Main {
+    public static void main(String args[]) {
+        Container<String, String, String> stringContainer = new Container<>("Hello", "Generics", "World");
+        stringContainer.display();
+
+        Container<Integer, Double, Boolean> mixedContainer = new Container<>(123, 45.6, true);
+        mixedContainer.display();
     }
 }
