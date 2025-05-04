@@ -783,6 +783,64 @@
 //--------------------------------------------------------------------------------------------------------------
 
 //heritance
+
+// import java.util.Scanner;
+
+// class Loan {
+//     char name;
+    
+//     public Loan(char name) {
+//         this.name = name;
+//     }
+// }
+
+// class CarLoan extends Loan {
+//     int data;
+//     char model;
+
+//     // Constructor for CarLoan
+//     public CarLoan(char name, int data, char model) {
+//         super(name);  // Calling the parent class constructor
+//         this.data = data;
+//         this.model = model;
+//     }
+
+//     // Method to display loan details
+//     public void display() {
+//         System.out.println("Loan Name: " + name);
+//         System.out.println("Car Data: " + data);
+//         System.out.println("Car Model: " + model);
+//     }
+// }
+
+// public class Main {
+//     public static void main(String[] args) {
+//         // Create scanner for input
+//         Scanner scanner = new Scanner(System.in);
+
+//         // Taking input from the user
+//         System.out.println("Enter loan name (single character): ");
+//         char loanName = scanner.next().charAt(0);
+
+//         System.out.println("Enter loan data (integer): ");
+//         int loanData = scanner.nextInt();
+
+//         System.out.println("Enter car model (single character): ");
+//         char carModel = scanner.next().charAt(0);
+
+//         // Create a CarLoan object
+//         CarLoan carLoan = new CarLoan(loanName, loanData, carModel);
+
+//         // Display loan details
+//         carLoan.display();
+//     }
+// }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+//heritance
 // class car{  //car-->automatic car(main)-->electric
 
 //     void start(){System.out.print("car has started");}
@@ -1459,60 +1517,456 @@
 
 
 //--------------------------------------------------------------------------------------------------------------
-import java.io.*;
-class Container<T>
-{
-    private T item;
-    public Container(T item) {
-        this.item = item;
-    }
-    void display(){
-        System.out.println("Item: " + item);
-    }
+// import java.io.*;
+// class Container<T>
+// {
+//     private T item;
+//     public Container(T item) {
+//         this.item = item;
+//     }
+//     void display(){
+//         System.out.println("Item: " + item);
+//     }
 
-}
+// }
 
-class Main
-{
-    public static void main(String args[])
-    {
-        Container<String> stringContainer = new Container<>("Hello, Generics!");
-        stringContainer.display();
+// class Main
+// {
+//     public static void main(String args[])
+//     {
+//         Container<String> stringContainer = new Container<>("Hello, Generics!");
+//         stringContainer.display();
 
-        Container<Integer> intContainer = new Container<>(123);
-        intContainer.display();
-    }
-}
+//         Container<Integer> intContainer = new Container<>(123);
+//         intContainer.display();
+//     }
+// }
 
 
 
 //--------------------------------------------------------------------------------------------------------------
-import java.io.*;
+// import java.io.*;
 
-class Container<T, Y, Z> {
-    private T first;
-    private Y second;
-    private Z third;
+// class Container<T, Y, Z> {
+//     private T first;
+//     private Y second;
+//     private Z third;
 
-    public Container(T first, Y second, Z third) {
-        this.first = first;
-        this.second = second;
-        this.third = third;
+//     public Container(T first, Y second, Z third) {
+//         this.first = first;
+//         this.second = second;
+//         this.third = third;
+//     }
+
+//     void display() {
+//         System.out.println("First: " + first);
+//         System.out.println("Second: " + second);
+//         System.out.println("Third: " + third);
+//     }
+// }
+
+// public class Main {
+//     public static void main(String args[]) {
+//         Container<String, String, String> stringContainer = new Container<>("Hello", "Generics", "World");
+//         stringContainer.display();
+
+//         Container<Integer, Double, Boolean> mixedContainer = new Container<>(123, 45.6, true);
+//         mixedContainer.display();
+//     }
+// }
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+// import java.io.*;
+// class Container<T extends Number, U> {
+//     private T first;
+//     private U second;
+
+//     public Container(T first, U second) {
+//         this.first = first;
+//         this.second = second;
+//     }
+
+//     void display() {
+//         System.out.println("First: " + first);
+//         System.out.println("Second: " + second);
+//     }
+// }
+// public static class Main{
+//     public static void main(String args[]) {
+//         Container<Integer, String> intStringContainer = new Container<>(123, "Hello");
+//         intStringContainer.display();
+
+//         Container<Double, String> doubleStringContainer = new Container<>(45.6, "World");
+//         doubleStringContainer.display();
+//     }
+// }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+// import java.io.*;
+// class Container<T>{
+//     private T item;
+//     public Container(T item) {
+//         this.item = item;
+//     }
+//     public void showItem() {
+//         System.out.println("Item: " + item);
+//     }
+// }
+// public class Main{
+//     public static void main(String args[]){
+//         Container<String> rice=new Container<>("Rice");
+//         Container<Integer> number=new Container<>(123);
+//         rice.showItem();
+//         number.showItem();
+//     }
+// }   
+
+
+//--------------------------------------------------------------------------------------------------------------
+// import java.util.ArrayList;
+// import java.util.List;
+
+// class BaseStudent {
+//     String name;
+//     public BaseStudent(String name) {
+//         this.name = name;
+//     }
+//     public String toString() {
+//         return "Base Name: " + name;
+//     }
+// }
+
+// class SchoolStudent extends BaseStudent {
+//     public SchoolStudent(String name) {
+//         super(name);
+//     }
+//     public String toString() {
+//         return "School Name: " + name;
+//     }
+// }
+
+// class CollegeStudent extends BaseStudent {
+//     public CollegeStudent(String name) {
+//         super(name);
+//     }
+//     public String toString() {
+//         return "College Name: " + name;
+//     }
+// }
+
+// public class Main {
+//     // Upper bound wildcard: read-only producer
+//     public static void printStudentDetails(List<? extends BaseStudent> students) {
+//         System.out.println("Student Details:");
+//         for(BaseStudent student : students) {
+//             System.out.println("->" + student);
+//         }
+//     }
+    
+//     // Lower bound: write-only consumer
+//     public static void addStudent(List<? super BaseStudent> students) {
+//         System.out.println("Adding students...");
+//         students.add(new SchoolStudent("Ansh"));
+//         students.add(new CollegeStudent("Ansh Gupta"));
+//         students.add(new BaseStudent("Generic Student"));
+//     }
+
+//     public static void main(String args[]) {
+//         // Upper bound: read only producer
+//         List<SchoolStudent> schoolList = new ArrayList<>();
+//         schoolList.add(new SchoolStudent("techbire"));
+//         schoolList.add(new SchoolStudent("a blog"));
+        
+//         List<CollegeStudent> collegeList = new ArrayList<>();
+//         collegeList.add(new CollegeStudent("tech"));
+//         collegeList.add(new CollegeStudent("sci-fi"));
+        
+//         printStudentDetails(schoolList);
+//         printStudentDetails(collegeList);
+        
+//         // For lower bound writing
+//         List<BaseStudent> baseList = new ArrayList<>();
+//         addStudent(baseList);
+        
+//         // Now print what we added in baseList
+//         System.out.println("Base List after adding students:");
+//         for(BaseStudent student : baseList) {
+//             System.out.println("->" + student);
+//         }
+//     }
+// }
+
+
+// import java.util.ArrayList;
+// class BaseStudent{
+//     String name;
+//     public BaseStudent(String name){
+//         this.name=name;
+//     }
+//     public String toString(){
+//         return "Base Name: "+name;
+//     }
+// }
+// class Student extends BaseStudent{
+//     public SchoolStudent(String name){
+//         super(name);
+//     }
+//     public String toString(){
+//         return "Student Name: "+name;
+//     }
+// }
+// class CollegeStudent extends BaseStudent{
+//     public CollegeStudent(String name){
+//         super(name);
+//     }
+//     public String toString(){
+//         return "College Name: "+name;
+//     }
+// }
+// public class Main{
+//     public static void printStudentDetails(List<? extends BaseStudent> students){
+//         System.out.println("Student Details:");
+//         for(BaseStudent student:students){
+//             System.out.println("->"+student);
+//         }
+//     }
+//     //lower bound: write only consumer
+//     public static void addStudent(List<? super BaseStudent> students){
+//         System.out.println("Adding students...");
+//         students.add(new Student("Ansh"));
+//         students.add(new CollegeStudent("Ansh Gupta"));
+//         students.add(new BaseStudent("Generic Student"));
+//     }
+
+//     public static void main(String args[]){
+//         //upper bound: read only producer
+//         List<SchoolStudent>schoolList=new ArrayList<>();
+//         schoolList.add(new SchoolStudent("techbire"));
+//         schoolList.add(new SchoolStudent("a blog"));
+//         List<CollegeStudent>collegeList=new ArrayList<>();
+//         collegeList.add(new CollegeStudent("tech"));
+//         collegeList.add(new CollegeStudent("sci-fi"));
+//         printStudentDetails(schoolList);
+//         printStudentDetails(collegeList);
+//         //for lower bound writing
+//         List<BaseStudent> baseList=new ArrayList<>();
+//         addStudent(baseList);
+//         //now print what we added in baseList
+
+//         System.out.println("Base List after adding students:");
+//         for(BaseStudent student:baseList){
+//             System.out.println("->"+student);
+//         }
+       
+
+//     }
+// }
+
+//--------------------------------------------------------------------------------------------------------------
+// import java.util.ArrayList;
+
+// class Main {
+//     public static void main(String args[]) {
+//         // Non-generic ArrayList (raw type) - can store objects of any type
+//         // Not recommended as it skips compile-time type checking
+//         ArrayList list = new ArrayList();
+//         list.add("hello");
+//         list.add(123);    
+//         System.out.println("Raw ArrayList: " + list);
+        
+//         // Generic ArrayList - type-safe, only allows String objects
+//         ArrayList<String> list1 = new ArrayList<>();
+//         list1.add("hello");
+//         list1.add("world");
+//         // list1.add(123); // This would cause a compile error
+        
+//         // Print generic ArrayList
+//         System.out.println("Generic ArrayList: " + list1);;
+//     }
+// }
+
+//--------------------------------------------------------------------------------------------------------------
+
+// import java.util.*;
+// class Student implements Comparable<Student>
+// {
+//     int rollNo;
+//     String name;
+//     public Student(int rollNo,String name){
+//         this.rollNo=rollNo;
+//         this.name=name;
+//     }
+//     @Override
+//     public int compareTo(Student s){
+//         return this.rollNo-s.rollNo;
+//     }
+//     public String toString(){
+//         return rollNo+"-"+name;
+//     }
+// }
+
+// public class Main {
+//     public static void main(String args[]){
+//         TreeSet<Student>students=new TreeSet<>();
+//         students.add(new Student(1,"prabh"));
+//         students.add(new Student(2,"navi"));
+//         students.add(new Student(3,"ansh"));
+//         for(Student s:students){
+//             System.out.println(s);
+//         }
+        
+//     }
+// }
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+//comparator
+// import java.util.*;
+// class Student{
+//     int rollNo;
+//     String name;
+//     public Student(int rollNo,,String name){
+//         this.rollNo=rollNo;
+//         this.name=name;
+//     }
+//     public String toString(){
+//         return rollNo+"-"+name;
+//     }
+// }
+// class NameSort implements Comparator<Student>{
+//     public int compare
+// }
+
+//--------------------------------------------------------------------------------------------------------------
+// import java.util.*;
+// class Main{
+//     public static void main(String args[]){
+//         HashMap<String,Integer> map=new HashMap<>();
+//         map.put("ansh",1);
+//         map.put("gupta",2);
+//         map.put("rock",3);
+//         String search="ansh";
+//         if(map.containsKey(search)){
+//             System.out.println("key found: "+search+" value is: "+map.get(search));
+//         }
+//         else{
+//             System.out.println("key not found: "+search);
+//         }
+//         System.out.println("All keys and values in the map:");
+//         System.out.println(map.get("ansh"));
+//         System.out.println(map.get("gupta"));
+//         System.out.println(map.get("rock"));
+//     }
+// }
+
+//--------------------------------------------------------------------------------------------------------------
+// import java.util.*;
+// class Main{
+//     public static void main(String args[]){
+//         HashMap<Integer,String>map=new HashMap<>();
+//         map.put(1,"ansh");
+//         map.put(2,"gupta");
+//         map.put(3,"rock");
+//         map.put(4,"bhai");
+//         System.out.println("All keys and values in the map:");
+//         //retrieve a value
+//         System.out.println("Student with 1: "+map.get(1));
+//         //containskey()-check if key is present or not
+//         System.out.println("Is key 2 present: "+map.containsKey(2));
+//         //containsvalue()-check if value is present or not
+//         System.out.println("Is value 'rock' present: "+map.containsValue("rock"));
+//         //keyset()-get all keys
+//         Set<Integer> keys=map.keySet();
+//         System.out.println("All keys in the map: "+keys);
+//         //values()-get all values
+//         Collection<String> values=map.values();
+//         System.out.println("All values in the map: "+values);
+//         //entryset()-get all key-value pairs
+//         Set<Map.Entry<Integer,String>> entries=map.entrySet();
+//         System.out.println("All key-value pairs in the map:");
+//         for(Map.Entry<Integer,String> entry:entries){
+//             System.out.println(entry.getKey()+"-"+entry.getValue());
+//         }
+//         //size()-get size of the map
+//         System.out.println("Size of the map: "+map.size());
+//         //isempty()-check if map is empty or not
+//         System.out.println("Is map empty: "+map.isEmpty());
+//         //remove()-remove a key-value pair
+//         map.remove(3);
+//         System.out.println("After removing key 3, map is: "+map);
+//         //replace()-replace a value for a key
+//         map.replace(2,"new value");
+//         System.out.println("After replacing value for key 2, map is: "+map);
+//         //putifabsent()-add a key-value pair if key is not present
+//         map.putIfAbsent(5,"new key");
+//         System.out.println("After adding new key-value pair, map is: "+map);
+//         // clear()-remove all key-value pairs
+//         map.clear();
+//         System.out.println("After clearing, is map empty: "+map.isEmpty());
+//     }
+// }
+
+//--------------------------------------------------------------------------------------------------------------
+// import java.util.*;
+// class Main{
+//     public static void main(String args[]){
+//         Deque<String>history=new ArrayDeque<>();
+//         history.addLast("google");
+//         history.addLast("facebook");        
+//         history.addLast("github");
+//         System.out.println("History: "+history);
+//         history.removeLast();
+//         System.out.println("History after removing last: "+history);
+//         history.addFirst("twitter");
+//         System.out.println("History after adding first: "+history);        
+ 
+//     }
+// }
+
+
+//--------------------------------------------------------------------------------------------------------------
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Deque<String>deque=new LinkedList<>();
+        System.out.println("Adding elements to the deque:");
+        deque.addFirst("apple");
+        deque.addLast("banana");
+        deque.offerFirst("cherry");
+        deque.offerLast("date");
+        System.out.println("Deque: "+deque);
+        System.out.println("----------Peeking elements----------");
+        System.out.println("First element: "+deque.peekFirst());
+        System.out.println("Last element: "+deque.peekLast());
+        System.out.println("----------Removing elements----------");
+        System.out.println("Removed first element: "+deque.pollFirst());
+        System.out.println("Removed last element: "+deque.pollLast());
+        System.out.println("Deque after removals: "+deque);
+        System.out.println("----------Polling Elements----------");
+        System.out.println("Polled first element: "+deque.pollFirst());
+        System.out.println("Polled last element: "+deque.pollLast());
+        System.out.println("Deque after polling: "+deque);
+        System.out.println("----------Trying get on empty deque----------");
+        try{
+            System.out.println("First element: "+deque.getFirst());
+        }catch(Exception e){
+            System.out.println("Deque is empty, cannot get first element."+e);
+        }
+    
+    try{
+        System.out.println("Last element: "+deque.getLast());
+    }catch(Exception e){
+        System.out.println("Deque is empty, cannot get last element."+e);
     }
-
-    void display() {
-        System.out.println("First: " + first);
-        System.out.println("Second: " + second);
-        System.out.println("Third: " + third);
-    }
+    System.out.println("----------Adding elements back to deque----------");
+    deque.addFirst("grape");
+    deque.addLast("kiwi");
+    System.out.println("Deque after adding elements back: "+deque);
 }
-
-public class Main {
-    public static void main(String args[]) {
-        Container<String, String, String> stringContainer = new Container<>("Hello", "Generics", "World");
-        stringContainer.display();
-
-        Container<Integer, Double, Boolean> mixedContainer = new Container<>(123, 45.6, true);
-        mixedContainer.display();
-    }
 }
